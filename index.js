@@ -9,5 +9,5 @@ app.get('/', (req, res, next) => {
 });
 
 app.listen(port, () => {
-    console.log('welcome');
+    console.log('welcome to the test web app launch!');
 });

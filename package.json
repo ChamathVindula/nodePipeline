@@ -2,10 +2,10 @@
   "name": "bengali-community-library",
   "version": "1.0.0",
   "description": "test project to deploy onto aws and create a CI/CD pipeline",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "author": "Chamath",
   "license": "ISC",
