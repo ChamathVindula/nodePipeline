@@ -8,6 +8,6 @@ app.get('/', (req, res, next) => {
     res.send("<h1>Welcome to the home page</h1>");
 });
 
-app.listen(port, () => {
+app.listen(8080, () => {
     console.log('welcome to the test web app launch!');
 });
