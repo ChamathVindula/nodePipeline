@@ -66,7 +66,7 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.post('/message', (req, res, next) => {
+app.get('/message', (req, res, next) => {
     // console.log(req.body.From);
     // console.log(req.body.Body);
 
@@ -89,6 +89,7 @@ app.post('/message', (req, res, next) => {
         to: '+61450716200'
     })
     .then(message => console.log(message.sid));
+    res.send('hello');
 });
 
 app.listen(8080);
