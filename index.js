@@ -67,16 +67,28 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.post('/message', (req, res, next) => {
-    console.log(req.body.From);
-    console.log(req.body.Body);
+    // console.log(req.body.From);
+    // console.log(req.body.Body);
 
-    res.send(`
-        <Response>
-            <Message>
-                Hello have an awesome day!
-            </Message>
-        </Response>
-    `);
+    // res.send(`
+    //     <Response>
+    //         <Message>
+    //             Hello have an awesome day!
+    //         </Message>
+    //     </Response>
+    // `);
+
+    const accountSid = 'AC5aa3e4034613b1d1c6fa220b8b75e9af';
+    const authToken = '21f39fd4c4290128039261ca7957d3f7';
+    const client = require('twilio')(accountSid, authToken);
+
+    client.messages
+    .create({
+        body: 'Hello this is the testing message',
+        from: '+12015817379',
+        to: '+61450716200'
+    })
+    .then(message => console.log(message.sid));
 });
 
 app.listen(8080);
